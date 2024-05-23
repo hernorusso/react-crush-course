@@ -1,5 +1,5 @@
-import { Post } from "./components/post";
-import { List } from "./components/list";
+import { Post } from "../components/post";
+import { List } from "../components/list";
 
 function App() {
   return (
