@@ -1,4 +1,4 @@
-import styles from "./Post.module.css";
+import styles from "./post.module.css";
 
 const Post = ({ author, body }) => {
   return (
