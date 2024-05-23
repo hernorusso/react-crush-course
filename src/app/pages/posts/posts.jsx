@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Post, List, NewPost } from "./components";
+import { Modal } from "../components";
 
 const Posts = () => {
   const [postBody, setPostBody] = useState("");
@@ -14,10 +15,12 @@ const Posts = () => {
 
   return (
     <>
-      <NewPost
-        onChangeBody={changeBodyHandler}
-        onChangeAuthor={changeAuthorHandler}
-      />
+      <Modal>
+        <NewPost
+          onChangeBody={changeBodyHandler}
+          onChangeAuthor={changeAuthorHandler}
+        />
+      </Modal>
       <List>
         <Post author={postAuthor} body={postBody} key="1" />
         <Post author="maxi" body="A post from maxi" key="2" />
@@ -25,4 +28,5 @@ const Posts = () => {
     </>
   );
 };
+
 export { Posts };
