@@ -1,18 +1,38 @@
+import { useState } from "react";
 import styles from "./new-post.module.css";
 
-const NewPost = ({ onChangeBody, onChangeAuthor, onCancel }) => {
+const NewPost = ({ onClose }) => {
+  const [postBody, setPostBody] = useState("");
+  const [postAuthor, setPostAuthor] = useState("");
+
+  const changeBodyHandler = (event) => {
+    setPostBody(event.target.value);
+  };
+  const changeAuthorHandler = (event) => {
+    setPostAuthor(event.target.value);
+  };
+  const submitHandler = (e) => {
+    e.preventDefault();
+    const postData = {
+      body: postBody,
+      author: postAuthor,
+    };
+    console.log(postData);
+    onClose();
+  };
+
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={submitHandler}>
       <p>
         <label htmlFor="body">Text</label>
-        <textarea id="body" required rows={3} onChange={onChangeBody} />
+        <textarea id="body" required rows={3} onChange={changeBodyHandler} />
       </p>
       <p>
         <label htmlFor="name">Your name</label>
-        <input type="text" id="name" onChange={onChangeAuthor} required />
+        <input type="text" id="name" onChange={changeAuthorHandler} required />
       </p>
       <p className={styles.actions}>
-        <button type="button" onClick={onCancel}>
+        <button type="button" onClick={onClose}>
           Cancel
         </button>
         <button>Submit</button>
