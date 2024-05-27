@@ -1,7 +1,10 @@
 import styles from "./modal.module.css";
-const Modal = ({ children }) => (
-  <div className={styles.backdrop}>
-    <dialog open className={styles.modal}>
+const stopClickPopagation = (e) => {
+  e.stopPropagation();
+};
+const Modal = ({ children, onModalBackgrondClick }) => (
+  <div className={styles.backdrop} onClick={onModalBackgrondClick}>
+    <dialog open className={styles.modal} onClick={stopClickPopagation}>
       {children}
     </dialog>
   </div>

@@ -1,8 +1,8 @@
-import classes from "./new-post.module.css";
+import styles from "./new-post.module.css";
 
 const NewPost = ({ onChangeBody, onChangeAuthor }) => {
   return (
-    <form className={classes.form}>
+    <form className={styles.form}>
       <p>
         <label htmlFor="body">Text</label>
         <textarea id="body" required rows={3} onChange={onChangeBody} />
