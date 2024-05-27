@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Post, List, NewPost } from "./components";
 import { Modal } from "../components";
 
-const Posts = ({ isPosting, onNewPostBackgrondClickHandler }) => {
+const Posts = ({ isPosting, onCancelNewPost }) => {
   const [postBody, setPostBody] = useState("");
   const [postAuthor, setPostAuthor] = useState("");
 
@@ -16,10 +16,11 @@ const Posts = ({ isPosting, onNewPostBackgrondClickHandler }) => {
   return (
     <>
       {isPosting && (
-        <Modal onModalBackgrondClick={onNewPostBackgrondClickHandler}>
+        <Modal onModalBackgrondClick={onCancelNewPost}>
           <NewPost
             onChangeBody={changeBodyHandler}
             onChangeAuthor={changeAuthorHandler}
+            onCancel={onCancelNewPost}
           />
         </Modal>
       )}

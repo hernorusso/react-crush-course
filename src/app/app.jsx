@@ -4,21 +4,21 @@ import { Header } from "./header";
 
 function App() {
   const [isPosting, setIsPosting] = useState(false);
-  const createPostHandler = () => {
+  const showNewPostModalHandler = () => {
     setIsPosting(true);
   };
 
-  const newPostBackgrondClickHandler = () => {
+  const hideNewPostModalHandler = () => {
     setIsPosting(false);
   };
 
   return (
     <>
-      <Header onCreatePost={createPostHandler} />
+      <Header onCreatePost={showNewPostModalHandler} />
       <main>
         <Posts
           isPosting={isPosting}
-          onNewPostBackgrondClickHandler={newPostBackgrondClickHandler}
+          onCancelNewPost={hideNewPostModalHandler}
         />
       </main>
     </>
