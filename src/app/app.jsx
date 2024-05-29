@@ -16,7 +16,10 @@ function App() {
     <>
       <Header onCreatePost={showNewPostModalHandler} />
       <main>
-        <Posts isPosting={isPosting} onCloseNewPost={hideNewPostModalHandler} />
+        <Posts
+          isPosting={isPosting}
+          onClosePostModal={hideNewPostModalHandler}
+        />
       </main>
     </>
   );

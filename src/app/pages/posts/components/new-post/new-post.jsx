@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./new-post.module.css";
 
-const NewPost = ({ onClose }) => {
+const NewPost = ({ onClose, onAddPost }) => {
   const [postBody, setPostBody] = useState("");
   const [postAuthor, setPostAuthor] = useState("");
 
@@ -13,11 +13,11 @@ const NewPost = ({ onClose }) => {
   };
   const submitHandler = (e) => {
     e.preventDefault();
-    const postData = {
+    const post = {
       body: postBody,
       author: postAuthor,
     };
-    console.log(postData);
+    onAddPost(post);
     onClose();
   };
 
