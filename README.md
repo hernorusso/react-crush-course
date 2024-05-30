@@ -8,6 +8,9 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 ## Based on Academinds [Next.js](https://www.udemy.com/course/nextjs-react-the-complete-guide) course
-Slight changes in the file structure and naming convention to experiment with different approaches.
+
+Slight changes in the file structure and naming convention to experiment with different approaches (\*).
 
 Thanks to [@mschwarzmueller](https://github.com/mschwarzmueller) (I gained useful knowledge from this course!)
+
+(\*): [@mauroBus](https://github.com/mauroBus), your architectural insights have been instrumental in my learning journey. I am truly grateful for the knowledge I gained from you!
