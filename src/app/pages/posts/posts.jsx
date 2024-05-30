@@ -5,7 +5,9 @@ const Posts = () => {
   return (
     <>
       <Outlet />
-      <PostList />
+      <main>
+        <PostList />
+      </main>
     </>
   );
 };

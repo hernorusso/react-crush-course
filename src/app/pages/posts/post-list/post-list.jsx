@@ -32,12 +32,7 @@ const PostList = ({ isPosting, onClosePostModal }) => {
   };
 
   return (
-    <main>
-      {/* TODO: remove this  {isPosting && (
-        <Modal onClose={onClosePostModal}>
-          { <NewPost onClose={onClosePostModal} onAddPost={addPostHandler} /> }
-        </Modal>
-      )} */}
+    <>
       {!isFetching && posts.length > 0 && (
         <List>
           {posts.map(({ author, body }) => (
@@ -56,7 +51,7 @@ const PostList = ({ isPosting, onClosePostModal }) => {
           <p>Loading...</p>
         </div>
       )}
-    </main>
+    </>
   );
 };
 
