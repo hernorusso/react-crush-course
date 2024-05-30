@@ -1,43 +1,18 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Form, redirect } from 'react-router-dom';
 import { Modal } from '../components';
 import styles from './new-post.module.css';
 
-const NewPost = ({ onClose, onAddPost }) => {
-  const [postBody, setPostBody] = useState('');
-  const [postAuthor, setPostAuthor] = useState('');
-
-  const changeBodyHandler = (event) => {
-    setPostBody(event.target.value);
-  };
-  const changeAuthorHandler = (event) => {
-    setPostAuthor(event.target.value);
-  };
-  const submitHandler = (e) => {
-    e.preventDefault();
-    const post = {
-      body: postBody,
-      author: postAuthor,
-    };
-    onAddPost(post);
-    onClose();
-  };
-
+const NewPost = () => {
   return (
     <Modal>
-      <form className={styles.form} onSubmit={submitHandler}>
+      <Form method="post" className={styles.form}>
         <p>
           <label htmlFor="body">Text</label>
-          <textarea id="body" required rows={3} onChange={changeBodyHandler} />
+          <textarea id="body" name="body" required rows={3} />
         </p>
         <p>
           <label htmlFor="name">Your name</label>
-          <input
-            type="text"
-            id="name"
-            onChange={changeAuthorHandler}
-            required
-          />
+          <input type="text" id="name" name="author" required />
         </p>
         <p className={styles.actions}>
           <Link to=".." type="button">
@@ -45,9 +20,25 @@ const NewPost = ({ onClose, onAddPost }) => {
           </Link>
           <button>Submit</button>
         </p>
-      </form>
+      </Form>
     </Modal>
   );
 };
 
-export { NewPost };
+const action = async ({ request }) => {
+  const formData = await request.formData();
+  const postData = Object.fromEntries(formData);
+  console.log(postData);
+
+  await fetch('http://localhost:8080/posts', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(postData),
+  });
+
+  return redirect('/');
+};
+
+export { NewPost, action };
