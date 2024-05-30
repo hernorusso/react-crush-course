@@ -8,8 +8,8 @@ const PostList = () => {
     <>
       {posts.length > 0 && (
         <List>
-          {posts.map(({ author, body }) => (
-            <Post author={author} body={body} key={body} />
+          {posts.map(({ author, body, id }) => (
+            <Post author={author} body={body} key={id} id={id} />
           ))}
         </List>
       )}
