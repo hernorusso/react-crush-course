@@ -1,28 +1,13 @@
-import { useState } from "react";
-import { Posts } from "./pages/posts";
-import { Header } from "./header";
+import { Header } from './header';
+import { Outlet } from 'react-router-dom';
 
-function App() {
-  const [isPosting, setIsPosting] = useState(false);
-  const showNewPostModalHandler = () => {
-    setIsPosting(true);
-  };
-
-  const hideNewPostModalHandler = () => {
-    setIsPosting(false);
-  };
-
+const App = () => {
   return (
     <>
-      <Header onCreatePost={showNewPostModalHandler} />
-      <main>
-        <Posts
-          isPosting={isPosting}
-          onClosePostModal={hideNewPostModalHandler}
-        />
-      </main>
+      <Header />
+      <Outlet />
     </>
   );
-}
+};
 
 export { App };
