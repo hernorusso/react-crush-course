@@ -1,2 +1,2 @@
-export { NewPost } from './new-post';
-export { Posts } from './posts';
+export * from './new-post';
+export * from './posts';
