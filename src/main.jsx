@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { App } from './app';
-import { NewPost } from './app/pages/new-post';
-import { Posts } from './app/pages/posts';
+import { NewPost, Posts } from './app/pages';
 import './main.css';
 
 const router = createBrowserRouter([
