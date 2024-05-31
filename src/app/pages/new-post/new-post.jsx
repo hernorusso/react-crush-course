@@ -28,7 +28,6 @@ const NewPost = () => {
 const action = async ({ request }) => {
   const formData = await request.formData();
   const postData = Object.fromEntries(formData);
-  console.log(postData);
 
   await fetch('http://localhost:8080/posts', {
     method: 'POST',
