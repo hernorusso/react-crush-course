@@ -1,3 +1,5 @@
+@import './colors.css';
+
 * {
   box-sizing: border-box;
 }
@@ -8,7 +10,11 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-  background-image: radial-gradient(ellipse at top left, #7f50e4, #4c05d0);
+  background-image: radial-gradient(
+    ellipse at top left,
+    var(--light-blue-1),
+    var(--light-blue-2)
+  );
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,5 +24,5 @@
 
 body {
   margin: 0;
-  color: #e6ddf9;
+  color: var(--white-1);
 }

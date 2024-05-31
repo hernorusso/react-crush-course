@@ -1,7 +1,9 @@
+@import '/src/colors.css';
+
 .post {
   margin: 1rem 0;
   padding: 1rem;
-  background-color: #9c7eee;
+  background-color: var(--post-bg-color);
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   animation: animate-in 1s ease-out forwards;
@@ -14,7 +16,7 @@
 .author {
   font-size: 0.8rem;
   font-weight: bold;
-  color: #543280;
+  color: var(--post-author);
   margin: 0;
   text-transform: uppercase;
 }
@@ -23,7 +25,7 @@
   white-space: pre-wrap;
   font-size: 1.25rem;
   margin: 0.25rem 0 0 0;
-  color: #593884;
+  color: var(--post-content-text);
   font-style: italic;
 }
 
