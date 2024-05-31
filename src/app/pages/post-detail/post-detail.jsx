@@ -1,6 +1,6 @@
 import { useLoaderData, Link } from 'react-router-dom';
 
-import { Modal } from '../components';
+import { Modal } from '../common';
 import styles from './post-details.module.css';
 
 const PostDetails = () => {
